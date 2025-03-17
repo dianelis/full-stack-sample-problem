@@ -2,6 +2,7 @@ from flask import Flask
 from dotenv import load_dotenv
 import os
 from routes.auth import auth_bp, jwt
+from routes.iris import iris_bp
 from datetime import timedelta
 
 # Load environment variables
@@ -24,6 +25,7 @@ def create_app():
     
     # Register blueprints
     app.register_blueprint(auth_bp)
+    app.register_blueprint(iris_bp)
     
     return app
 
