@@ -17,15 +17,18 @@ jwt = JWTManager()
 users = {
     'diane-insua-virginica@gmail.com': {
         'password': 'Test12345',
-        'role': 'virginica-user'
+        'role': 'virginica-user',
+        'fullName': 'Diane Insua'
     },
     'diane-insua-setosa@gmail.com': {
         'password': 'Test12345',
-        'role': 'setosa-user'
+        'role': 'setosa-user',
+        'fullName': 'Diane Insua'
     },
     'diane-insua-admin@gmail.com': {
         'password': 'Test12345',
-        'role': 'admin'
+        'role': 'admin',
+        'fullName': 'Diane Insua'
     }
 }
 
@@ -50,10 +53,11 @@ def login():
     # Include role in the token
     user_data = {
         'username': email,
-        'role': users[email]['role']
+        'role': users[email]['role'],
+        'fullName': users[email]['fullName']
     }
     access_token = create_access_token(identity=user_data)
-    return jsonify({'access_token': access_token}), 200
+    return jsonify({'token': access_token, 'role': users[email]['role'], 'username': email, 'fullName': users[email]['fullName']}), 200
 
 @auth_bp.route('/logout', methods=['POST'])
 @jwt_required()
