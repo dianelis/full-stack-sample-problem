@@ -21,4 +21,6 @@ On the dashboard page there should be a button that says "logout" in the top rig
 
 ## Expectations
 
-You will have 72 hours from the time you recieve this email to complete as much of this excercise as possible. Please respond to this email with your progress. Your folder should include a requirements.txt for the python packages you use and package.json for the javascript packages you use. We do not expect you to complete the entire task. The goal is to see what you can come up with with 4-5 hours of work. You will be assesed based on the quality, and clairity of the code, code comments, commit comments, and app functionality.
+Your folder should include a requirements.txt for the python packages you use and package.json for the javascript packages you use. You will be assessed based on the quality, and clarity of the code, code comments, commit comments, and app functionality. 
+Other than that, please prioritize the dashboard tasks described, and prepare a brief summary of what you built, what tasks you prioritized and why, as well as what steps you would implement next.
+
