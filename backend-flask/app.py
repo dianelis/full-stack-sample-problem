@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from dotenv import load_dotenv
 import os
 from routes.auth import auth_bp, jwt
@@ -10,6 +11,15 @@ load_dotenv()
 
 def create_app():
     app = Flask(__name__)
+    
+    # Enable CORS
+    CORS(app, resources={
+        r"/*": {
+            "origins": "*",  # In production, replace with specific origins
+            "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+            "allow_headers": ["Content-Type", "Authorization"]
+        }
+    })
     
     # Configuration from environment variables
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
