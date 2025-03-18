@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("@fontsource/montserrat-alternates/files/montserrat-alternates-latin-400-normal.woff2")
+      format("woff2"),
+    url("@fontsource/montserrat-alternates/files/montserrat-alternates-latin-400-normal.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("@fontsource/montserrat-alternates/files/montserrat-alternates-latin-700-normal.woff2")
+      format("woff2"),
+    url("@fontsource/montserrat-alternates/files/montserrat-alternates-latin-700-normal.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --primary: #274494;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+html {
+  overflow: hidden;
+}
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-start-rgb))
+    )
+    rgb(var(--background-end-rgb));
+
+  @apply font-montserrat;
+}
