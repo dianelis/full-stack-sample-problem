@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/auth/AuthProvider";
 
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
@@ -12,20 +13,22 @@ function App() {
     <>
       <Toaster />
       <Router>
-        <Routes>
-          <Route path="/login" element={<Login />} />
+        <AuthProvider>
+          <Routes>
+            <Route path="/login" element={<Login />} />
 
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <MainLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route index element={<Dashboard />} />
-          </Route>
-        </Routes>
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <MainLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Dashboard />} />
+            </Route>
+          </Routes>
+        </AuthProvider>
       </Router>
     </>
   );
